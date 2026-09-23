@@ -69,7 +69,7 @@ export function V2Identity({ onHome, onOpenReferences, onOpenLab, nav, navTitle,
     <aside className="v2-rail">
       <div className="v2-rail-top">
         <button className="v2-rail-id" onClick={onHome}>
-          <img className="v2-avatar" src="/riz-mark.webp" alt="Riz" />
+          <img className="v2-avatar" src="/riz-profile.webp" alt="Riz" />
           <span>
             <span className="v2-rail-name">
               Riz
