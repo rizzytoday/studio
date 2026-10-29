@@ -35,7 +35,10 @@ export function V2Lab({ onClose, onSpawn }: { onClose: () => void; onSpawn: (toy
       <div className="v2-lab-panel" onClick={e => e.stopPropagation()}>
         <div className="v2-lab-head">
           <span className="v2-lab-label">Lab</span>
-          <button className="v2-lab-close" onClick={onClose} aria-label="Close">Close</button>
+          <div className="v2-lab-actions">
+            <a className="v2-lab-github" href="https://github.com/rizzytoday" target="_blank" rel="noopener noreferrer">github</a>
+            <button className="v2-lab-close" onClick={onClose} aria-label="Close">Close</button>
+          </div>
         </div>
 
         {/* the toys are the proof that the client work is built and not mocked,

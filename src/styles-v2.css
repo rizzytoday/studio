@@ -1250,11 +1250,15 @@
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.v2-lab-label, .v2-lab-close {
+.v2-lab-actions { display: flex; align-items: center; gap: 24px; }
+.v2-lab-label, .v2-lab-close, .v2-lab-github {
   font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8a8a;
 }
 .v2-lab-close { background: none; border: none; cursor: pointer; transition: color 0.2s ease; }
 .v2-lab-close:hover { color: #0a0a0a; }
+.v2-lab-github { text-transform: none; text-decoration: none; transition: color 0.2s ease; }
+.v2-lab-github:hover { color: #0a0a0a; }
+.v2-lab-github:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 .v2-lab-list { display: flex; flex-direction: column; }
 .v2-lab-row {
