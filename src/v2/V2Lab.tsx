@@ -9,12 +9,14 @@ interface LabItem {
   date: string        // DD/MM
   note?: string
   spawn?: Toy         // present = spawns an interactive toy over the page
+  href?: string       // standalone experiment
   badge?: string      // e.g. 'New'
 }
 
 // The lab — experiments and design toys. Newest first; grouped by year.
 const LAB: LabItem[] = [
-  { year: '2026', title: 'Tamagotchi', date: '27/06', note: 'An octopus that lives here. Feed, play, pet', spawn: 'pet', badge: 'New' },
+  { year: '2026', title: 'Chat Sidebar', date: '30/10', note: 'Pin, reorder, and personalize your chats', href: 'https://rizzytoday.github.io/lab/chat-sidebar/', badge: 'New' },
+  { year: '2026', title: 'Tamagotchi', date: '27/06', note: 'An octopus that lives here. Feed, play, pet', spawn: 'pet' },
   { year: '2026', title: 'Liquid Glass', date: '13/04', note: 'Displacement glass. Drag it over the page', spawn: 'glass' },
   { year: '2026', title: 'iPod', date: '24/03', note: 'Grab it, fling it, press play', spawn: 'ipod' },
 ]
@@ -61,6 +63,13 @@ export function V2Lab({ onClose, onSpawn }: { onClose: () => void; onSpawn: (toy
                 <span className="v2-lab-date">{it.date}</span>
               </>
             )
+            if (it.href) {
+              return (
+                <a key={it.title} className="v2-lab-row is-link" href={it.href} target="_blank" rel="noopener noreferrer">
+                  {inner}
+                </a>
+              )
+            }
             if (it.spawn) {
               const toy = it.spawn
               return (
